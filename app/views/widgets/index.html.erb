@@ -8,19 +8,8 @@
     <%= link_to 'New widget', new_widget_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="widgets" class="min-w-full">
+  <%= turbo_frame_tag "widgets", class: "min-w-full", autoscroll: "true" do %>
     <%= render @widgets %>
-  </div>
-  <div id="pager" class="min-w-full my-8 flex justify-between">
-    <div>
-      <% if @pagy.prev %>
-        <%= link_to "< Previous page", widgets_path(page: @pagy.prev), class: "rounded py-3 px-5 bg-gray-600 text-white block hover:bg-gray-800" %>
-      <% end %>
-    </div>
-    <div class="text-right">
-      <% if @pagy.next %>
-        <%= link_to "Next page >", widgets_path(page: @pagy.next), class: "rounded py-3 px-5 bg-gray-600 text-white block hover:bg-gray-800" %>
-      <% end %>
-    </div>
-  </div>
+    <%= render "pager", pagy: @pagy %>
+  <% end %>
 </div>
