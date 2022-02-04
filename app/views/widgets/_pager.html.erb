@@ -1,24 +1,12 @@
-<div id="pager" class="min-w-full my-8 flex justify-between">
+<div id="pager" class="min-w-full my-8 flex justify-center">
   <div>
-    <% if pagy.prev %>
-      <%= link_to(
-        "< Previous page",
-        widgets_path(page: pagy.prev),
-        class: "rounded py-3 px-5 bg-gray-600 text-white block hover:bg-gray-800",
-        data: {
-          turbo_action: "advance"
-        }
-      ) %>
-    <% end %>
-  </div>
-  <div class="text-right">
     <% if pagy.next %>
       <%= link_to(
-        "Next page >",
+        "Load more widgets",
         widgets_path(page: pagy.next),
         class: "rounded py-3 px-5 bg-gray-600 text-white block hover:bg-gray-800",
         data: {
-          turbo_action: "advance"
+          turbo_frame: "page_handler"
         }
       ) %>
     <% end %>

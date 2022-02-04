@@ -8,8 +8,9 @@
     <%= link_to 'New widget', new_widget_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <%= turbo_frame_tag "widgets", class: "min-w-full", autoscroll: "true" do %>
+  <%= turbo_frame_tag "page_handler" %>
+  <div id="widgets" class="min-w-full">
     <%= render @widgets %>
-    <%= render "pager", pagy: @pagy %>
-  <% end %>
+  </div>
+  <%= render "pager", pagy: @pagy %>
 </div>
