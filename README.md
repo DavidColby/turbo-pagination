@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repo contains the code that accompanies the tutorial originally published [here](https://www.colby.so/posts/pagination-and-infinite-scrolling-with-hotwire).
 
-Things you may want to cover:
+The tutorial, and this repository, demonstrate methods for implementing pagination and infinite scroll in a Rails 7 application powered by Turbo Frames, Turbo Streams, and Stimulus. Review the commit history in the `main` branch to see the three different Turbo-powered approaches that we implement in the tutorial.
 
-* Ruby version
+To run this repository locally, clone it and then:
+```
+bundle install
+rails db:create db:migrate
+rails s
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+And then navigate to localhost:3000/widgets. You may wish to create test widget data from the Rails console:
+```ruby
+50.times do |n|
+  Widget.create(name: "Widget ##{n}")
+end
+```
