@@ -8,7 +8,7 @@ To run this repository locally, clone it and then:
 ```
 bundle install
 rails db:create db:migrate
-rails s
+bin/dev
 ```
 
 And then navigate to localhost:3000/widgets. You may wish to create test widget data from the Rails console:
